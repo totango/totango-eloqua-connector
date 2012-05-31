@@ -71,7 +71,7 @@ __Step-4__: Create or run the Campaign in Eloqua.
 Add to your Eloqua campaign a decision that checks for the ‘active list name’ value inside the “Totango insights” field. In case of true add asset of suitable mail. Repeat this actions for all active lists.
 
 ![Campaign](/images/Eloqua_campaign.png)
-<SCREENSHOT>
+
 
 Of course, once you have the campaign setup for the first time, you can just re-execute it. 
 
@@ -103,23 +103,23 @@ If you didn’t install and setup the environment for the connector yet, follow th
 
 Change the configuration file __config/config.properties__ under your __totango-eloqua-connector__ dir as following:
 
-> Axis path
+_Axis path_
 
 __axisRepoPath__=/axis2-1.6.1/client_repo/axis2.xml
 
-> log4j property file path. If doesn't exist it uses a default configuration of INFO level writing to the stdout
+_log4j property file path. If doesn't exist it uses a default configuration of INFO level writing to the stdout_
 
 __log4jConfig__=/log4j.properties
 
-> use the totangoActiveLists property to specify active-lists to sync into Eloqua. Provide the list # ID and separate by commas if more than one
+_use the totangoActiveLists property to specify active-lists to sync into Eloqua. Provide the list # ID and separate by commas if more than one_
 
 __totangoActiveLists__=45,2030, 4001
 
-> Unique param for Authorization. see at (http://www.totango.com/developer/data-api/reference/data-api-authentication/)
+_Unique param for Authorization. see at (http://www.totango.com/developer/data-api/reference/data-api-authentication/)_
 
 __totangoToken__=70c80ab8bf99fa92d0bdb140866064c2cc268b40john@totango.com
 
-> Eloqua params
+_Eloqua params_
 
 __eloquaUser__=John.Smith
 
@@ -127,18 +127,18 @@ __eloquaPassword__=Example2424
 
 __eloquaAccountId__=E10AccountExample
 
-> The Eloqua internal name for the ‘Totango insights’ custom field
+_The Eloqua internal name for the ‘Totango insights’ custom field_
 
 __totangoInsightsField__=C_Totango_insights1
 
 
-> totango-eloqua binding
+_totango-eloqua binding_
 
-> The account identity, by default account_id, can replaced with name
+_The account identity, by default account_id, can replaced with name_
 
 __totangoAccoutId__=account_id
 
-> Eloqua contact field that represents the account id. The connector finds contacts to update according to this field
+_Eloqua contact field that represents the account id. The connector finds contacts to update according to this field_
 
 __accountIdField__=C_Company
  
