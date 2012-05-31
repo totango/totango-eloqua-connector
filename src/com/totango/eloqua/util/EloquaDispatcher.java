@@ -7,6 +7,7 @@ import org.apache.axis2.client.Options;
 import org.apache.axis2.client.ServiceClient;
 import org.apache.axis2.context.ConfigurationContext;
 import org.apache.axis2.context.ConfigurationContextFactory;
+import org.apache.log4j.Logger;
 
 import com.eloqua.secure.api._1_2.ArrayOfDynamicEntity;
 import com.eloqua.secure.api._1_2.DynamicEntity;
@@ -24,6 +25,7 @@ import com.microsoft.schemas._2003._10.serialization.arrays.ArrayOfstring;
 
 public class EloquaDispatcher {
 
+	private static Logger logger = Logger.getLogger(EloquaDispatcher.class);
 	private EloquaStub stub;
 	
 //	Create stub for Eloqua
@@ -71,9 +73,10 @@ public class EloquaDispatcher {
 			
 			if(res != null){				
 				if(res.getQueryResult().getEntities().getDynamicEntity() == null){
-					System.out.println("Unable to find Eloqua's contacts for the category " + queryCategory);
+					logger.warn("Unable to find Eloqua's contacts for the category " + queryCategory);					
 					return idLst;
 				}
+				
 //				Add contacts to the list
 				for(int i=0; i < res.getQueryResult().getEntities().getDynamicEntity().length; i++){
 					
@@ -137,7 +140,7 @@ public class EloquaDispatcher {
 //			Check if succeed
 			for(int index=0; index<resultArr.length; index++){
 				if(!resultArr[index].getSuccess()){
-					System.out.println("Unable to update contact " + resultArr[index].getID() + " : " + resultArr[index].getErrors().getError()[0].getMessage());											
+					logger.error("Unable to update contact " + resultArr[index].getID() + " : " + resultArr[index].getErrors().getError()[0].getMessage());																
 					result = false;
 				}					
 			}			

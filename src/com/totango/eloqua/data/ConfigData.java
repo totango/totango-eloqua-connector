@@ -7,8 +7,10 @@ import java.util.Properties;
 public class ConfigData {
 	
 	private String axisRepoPath;
+	private String log4jConfig;
+	
 
-//	Totango params
+	//	Totango params
 	private String[] totangoActiveLists;	
 	private String totangoToken;
 	private String totangoAccoutId;
@@ -31,6 +33,7 @@ public class ConfigData {
 		}
 		
 		this.setAxisRepoPath(configFile.getProperty(ConfigEnum.AXIS_REPO_PATH.value()));
+		this.setLog4jConfig(configFile.getProperty(ConfigEnum.LOG4J_CONFIG.value()));
 				
 		this.setTotangoToken(configFile.getProperty(ConfigEnum.TOTANGO_TOKEN.value()));		
 		this.setTotangoActiveLists(configFile.getProperty(ConfigEnum.TOTANGO_ACTIVE_LISTS.value()).trim().split(","));
@@ -116,4 +119,11 @@ public class ConfigData {
 		this.totangoAccoutId = totangoAccoutId;
 	}
 
+	public String getLog4jConfig() {
+		return log4jConfig;
+	}
+
+	public void setLog4jConfig(String log4jConfig) {
+		this.log4jConfig = log4jConfig;
+	}
 }

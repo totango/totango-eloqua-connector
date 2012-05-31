@@ -2,6 +2,7 @@ package com.totango.eloqua.data;
 
 public enum ConfigEnum {	
 	AXIS_REPO_PATH ("axisRepoPath"),
+	LOG4J_CONFIG ("log4jConfig"),
 	
 //	Totango params		
 	TOTANGO_ACTIVE_LISTS ("totangoActiveLists"),	
