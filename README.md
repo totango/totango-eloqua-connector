@@ -104,7 +104,7 @@ If you didn’t install and setup the environment for the connector yet, follow th
 
 Change the configuration file __config/config.properties__ under your __totango-eloqua-connector__ dir as following:
 
-_# Axis path_
+_#Axis path_
 
 __axisRepoPath__=/axis2-1.6.1/client_repo/axis2.xml
 
