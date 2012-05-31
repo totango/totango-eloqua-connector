@@ -30,7 +30,7 @@ Totango-Eloqua is an open source connector that allows you to sync Totango engag
 
 These are called Lifecycle Marketing Campaigns and you can read more about them on the Totango website. Example of such campaigns can target users that have been inactive for a long time, those that have (or have not) used a certain feature of your application, power users and so forth. 
 
-*NOTE:* The Totango-Eloqua Connector uses the following APIs:
+**NOTE:** The Totango-Eloqua Connector uses the following APIs:
 
 1. [Totango REST API](http://www.totango.com/developer/data-api/reference/active_list-api-endpoint/)
 
