@@ -31,7 +31,7 @@ Follow these steps to create a Lifecycle marketing campaign. The default setting
 __Step-1__: Define an Active-List to capture the behavior you want on Totango. 
 (By default, the connector uses the “Inactive Accounts”  to flag all users in accounts that have not used your application for the last two weeks). See [Filters & Segments](http://support.totango.com/entries/20447806-filters-segments) for more information. 
 
-Once you have your Active-List selected, take note of its name and ID. see: (http://www.totango.com/developer/data-api/reference/active_list-api/) to find your Active-Lists ID
+Once you have your Active-List selected, take note of its name and ID. (see: http://www.totango.com/developer/data-api/reference/active_list-api/ to find your Active-Lists ID)
 
 __Step-2__: Configure the connector with the Active-List ID
 Configure your Active-List ID in the connector configuration file under config.properties (look under the connector’s installation directory, under the config folder).  Use the __totangoActiveLists__ property to specify active-lists to sync into Eloqua. Provide the list ID and separate by commas if more than one.
@@ -90,7 +90,7 @@ Setting up Eloqua Totango Insights field  (One time setup)
 
 Declare a custom field for contacts called “__Totango insights__". 
 
-Go to Setup -> Fields & Views and select “Add” see here (http://topliners.eloqua.com/thread/3742). _Take note of the field’s Internal name_, you will need it to complete the setup as explained in the next section. 
+Go to Setup -> Fields & Views and select “Add” (see: http://topliners.eloqua.com/thread/3742). __Take note of the field’s Internal name, you will need it to complete the setup as explained in the next section__. 
 
 What this does
 Once you complete this step, each contact in the Eloqua contacts database will have a Totango Insights field, which will be used by the connector to signal which Active-List it belongs do. 
@@ -119,7 +119,7 @@ _#use the totangoActiveLists property to specify active-lists to sync into Eloqu
 __totangoActiveLists__=45,2030, 4001
 
 
-_#Unique param for Authorization. see at (http://www.totango.com/developer/data-api/reference/data-api-authentication/)_
+_#Unique param for Authorization. (see at http://www.totango.com/developer/data-api/reference/data-api-authentication/)_
 
 __totangoToken__=70c80ab8bf99fa92d0bdb140866064c2cc268b40john@totango.com
 
@@ -156,19 +156,19 @@ Installing the connector on your machine
 ### Java installation 
 To use the Totango-Eloqua application you should install Java environment as following:
 
-1. Download and install Java JRE from (http://www.oracle.com/technetwork/java/javase/downloads/index.html). 
+1. Download and install Java JRE from http://www.oracle.com/technetwork/java/javase/downloads/index.html. 
 
 2. put your JRE home dir in your system path.
 
 
 ### HTTP Client
-1. Download the apache http client from (http://hc.apache.org/downloads.cgi).
+1. Download the apache http client from http://hc.apache.org/downloads.cgi.
 
 2. Extract the zip/tar file and copy all jar files from the httpcomponents-client-4.1.3\lib dir to the Totango-Eloqua\lib dir. Make sure all jar files are in your java classpath.
 
 
 ### Log4J
-1. Download Log4j from (http://logging.apache.org/log4j/1.2/download.html).
+1. Download Log4j from http://logging.apache.org/log4j/1.2/download.html.
 
 2. Extract the zip/tar file and copy jar to the Totango-Eloqua\lib dir. Make sure the jar file is in your java classpath.
 
@@ -178,11 +178,11 @@ To use the Totango-Eloqua application you should install Java environment as fol
 ### Axis2
 1. Download the apache axis2 tool from http://axis.apache.org/axis2/java/core/download.cgi , extract it to your file system.
 
-2. Since Eloqua’s api is secured you need to download the rampart module from (http://axis.apache.org/axis2/java/rampart/download.html) , extract it to your file system install it and copy the rampart.mar file to your axis2 modules dir. Make sure you have set the __AXIS2_HOME__ environment variable.
+2. Since Eloqua’s api is secured you need to download the rampart module from http://axis.apache.org/axis2/java/rampart/download.html , extract it to your file system install it and copy the rampart.mar file to your axis2 modules dir. Make sure you have set the __AXIS2_HOME__ environment variable.
 
 3. Copy all jar files from your rampart-1.6.1\lib dir to your Totango-Eloqua\lib dir. Make sure all jar files are in your java classpath.
 
-4. Use the apache user guide in (http://axis.apache.org/axis2/java/core/docs/userguide.html) to create an EloquaStub. Make sure you use the namespace Eloqua and the wsdl from __(https://secure.eloqua.com/API/1.2/Service.svc?wsdl)__.
+4. Use the apache user guide in http://axis.apache.org/axis2/java/core/docs/userguide.html to create an EloquaStub. Make sure you use the namespace Eloqua and the wsdl from __(https://secure.eloqua.com/API/1.2/Service.svc?wsdl)__.
 
 5. Change the EloquaStub.getPolicy method to:
 
