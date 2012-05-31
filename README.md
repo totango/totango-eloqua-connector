@@ -67,9 +67,10 @@ __Output example__:
 > Finished successfully. Updated 7,842 contacts in Eloqua, based on 4 Active-Lists in Totango
 
 
-__Step-3__: Create or run the Campaign in Eloqua. 
+__Step-4__: Create or run the Campaign in Eloqua. 
 Add to your Eloqua campaign a decision that checks for the ‘active list name’ value inside the “Totango insights” field. In case of true add asset of suitable mail. Repeat this actions for all active lists.
 
+![Campaign](/images/Eloqua_campaign.png)
 <SCREENSHOT>
 
 Of course, once you have the campaign setup for the first time, you can just re-execute it. 
@@ -103,18 +104,23 @@ If you didn’t install and setup the environment for the connector yet, follow th
 Change the configuration file __config/config.properties__ under your __totango-eloqua-connector__ dir as following:
 
 > Axis path
+
 __axisRepoPath__=/axis2-1.6.1/client_repo/axis2.xml
 
 > log4j property file path. If doesn't exist it uses a default configuration of INFO level writing to the stdout
+
 __log4jConfig__=/log4j.properties
 
 > use the totangoActiveLists property to specify active-lists to sync into Eloqua. Provide the list # ID and separate by commas if more than one
+
 __totangoActiveLists__=45,2030, 4001
 
 > Unique param for Authorization. see at (http://www.totango.com/developer/data-api/reference/data-api-authentication/)
+
 __totangoToken__=70c80ab8bf99fa92d0bdb140866064c2cc268b40john@totango.com
 
 > Eloqua params
+
 __eloquaUser__=John.Smith
 
 __eloquaPassword__=Example2424
@@ -122,14 +128,18 @@ __eloquaPassword__=Example2424
 __eloquaAccountId__=E10AccountExample
 
 > The Eloqua internal name for the ‘Totango insights’ custom field
+
 __totangoInsightsField__=C_Totango_insights1
 
 
 > totango-eloqua binding
+
 > The account identity, by default account_id, can replaced with name
+
 __totangoAccoutId__=account_id
 
 > Eloqua contact field that represents the account id. The connector finds contacts to update according to this field
+
 __accountIdField__=C_Company
  
 
@@ -170,13 +180,23 @@ To use the Totango-Eloqua application you should install Java environment as fol
 5. Change the EloquaStub.getPolicy method to:
 
 private static org.apache.neethi.Policy getPolicy (java.lang.String policyString) {
+
   java.io.ByteArrayInputStream bais = new java.io.ByteArrayInputStream(policyString.getBytes());
+  
   try{
+  
     StAXOMBuilder builder = new StAXOMBuilder(bais);
+	
     OMElement documentElement = builder.getDocumentElement();
+	
     return org.apache.neethi.PolicyEngine.getPolicy(documentElement);
+	
   }catch (XMLStreamException e){
+  
     e.printStackTrace();
+	
   }
+  
   return null;
+  
 }
