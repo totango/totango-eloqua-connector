@@ -71,7 +71,7 @@ __Output example__:
 __Step-4__: Create or run the Campaign in Eloqua. 
 Add to your Eloqua campaign a decision that checks for the ‘active list name’ value inside the “Totango insights” field. In case of true add asset of suitable mail. Repeat this actions for all active lists.
 
-![Campaign](/images/Eloqua_campaign.png)
+![Campaign](https://github.com/totango/totango-eloqua-connector/blob/master/images/Eloqua_campaign.png)
 
 
 Of course, once you have the campaign setup for the first time, you can just re-execute it. 
@@ -104,7 +104,7 @@ If you didn’t install and setup the environment for the connector yet, follow th
 
 Change the configuration file __config/config.properties__ under your __totango-eloqua-connector__ dir as following:
 
-_Axis path_
+_# Axis path_
 
 __axisRepoPath__=/axis2-1.6.1/client_repo/axis2.xml
 
