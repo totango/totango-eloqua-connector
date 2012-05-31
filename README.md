@@ -73,8 +73,6 @@ Add to your Eloqua campaign a decision that checks for the ‘active list name’ va
 
 ![](/totango/totango-eloqua-connector/blob/master/images/Eloqua_campaign.png)
 
-<img src="/totango/totango-eloqua-connector/blob/master/images/Eloqua_campaign.png" width="300" height="200" />
-
 Of course, once you have the campaign setup for the first time, you can just re-execute it. 
 
 You’re done! 
