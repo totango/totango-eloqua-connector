@@ -90,7 +90,7 @@ Setting up Eloqua Totango Insights field  (One time setup)
 
 Declare a custom field for contacts called “__Totango insights__". 
 
-Go to Setup -> Fields & Views and select “Add” (see here (http://topliners.eloqua.com/thread/3742)). _Take note of the field’s Internal name_, you will need it to complete the setup as explained in the next section. 
+Go to Setup -> Fields & Views and select “Add” see here (http://topliners.eloqua.com/thread/3742). _Take note of the field’s Internal name_, you will need it to complete the setup as explained in the next section. 
 
 What this does
 Once you complete this step, each contact in the Eloqua contacts database will have a Totango Insights field, which will be used by the connector to signal which Active-List it belongs do. 
