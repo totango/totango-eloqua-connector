@@ -18,7 +18,7 @@ dog's back.
 > This is the second paragraph in the blockquote.
 >
 > ## This is an H2 in a blockquote
-**strong emphasis**
+**strong emphasis** 
  
 
 Totango-Eloqua Connector
