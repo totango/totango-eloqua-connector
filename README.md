@@ -6,7 +6,7 @@ These are called Lifecycle Marketing Campaigns and you can read more about them 
 
 __NOTE__: The Totango-Eloqua Connector uses the following APIs:
 
-1. [Totango REST API](http://www.totango.com/developer/data-api/reference/active_list-api-endpoint/)
+1. [Totango REST API](http://www.totango.com/developer/)
 
 2. [Eloqua SOAP API](http://topliners.eloqua.com/groups/eloqua-api/blog/2012/01/23/using-the-eloqua-soap-api-with-e10)
 
@@ -31,7 +31,7 @@ Follow these steps to create a Lifecycle marketing campaign. The default setting
 __Step-1__: Define an Active-List to capture the behavior you want on Totango. 
 (By default, the connector uses the “Inactive Accounts”  to flag all users in accounts that have not used your application for the last two weeks). See [Filters & Segments](http://support.totango.com/entries/20447806-filters-segments) for more information. 
 
-Once you have your Active-List selected, take note of its name and ID (see: http://www.totango.com/developer/data-api/reference/active_list-api/ to find your Active-Lists ID)
+Once you have your Active-List selected, take note of its name and ID. see: (http://www.totango.com/developer/data-api/reference/active_list-api/) to find your Active-Lists ID
 
 __Step-2__: Configure the connector with the Active-List ID
 Configure your Active-List ID in the connector configuration file under config.properties (look under the connector’s installation directory, under the config folder).  Use the __totangoActiveLists__ property to specify active-lists to sync into Eloqua. Provide the list ID and separate by commas if more than one.
@@ -90,7 +90,7 @@ Setting up Eloqua Totango Insights field  (One time setup)
 
 Declare a custom field for contacts called “__Totango insights__". 
 
-Go to Setup -> Fields & Views and select “Add” (see here (http://topliners.eloqua.com/thread/3742)).__Take note of the field’s Internal name_, you will need it to complete the setup as explained in the next section. 
+Go to Setup -> Fields & Views and select “Add” (see here (http://topliners.eloqua.com/thread/3742)). _Take note of the field’s Internal name_, you will need it to complete the setup as explained in the next section. 
 
 What this does
 Once you complete this step, each contact in the Eloqua contacts database will have a Totango Insights field, which will be used by the connector to signal which Active-List it belongs do. 
