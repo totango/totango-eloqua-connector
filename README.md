@@ -176,7 +176,7 @@ To use the Totango-Eloqua application you should install Java environment as fol
 
 
 ### Axis2
-1. Download the apache axis2 tool from (http://axis.apache.org/axis2/java/core/download.cgi) , extract it to your file system.
+1. Download the apache axis2 tool from http://axis.apache.org/axis2/java/core/download.cgi , extract it to your file system.
 
 2. Since Eloqua’s api is secured you need to download the rampart module from (http://axis.apache.org/axis2/java/rampart/download.html) , extract it to your file system install it and copy the rampart.mar file to your axis2 modules dir. Make sure you have set the __AXIS2_HOME__ environment variable.
 
