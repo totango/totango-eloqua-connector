@@ -108,19 +108,23 @@ _#Axis path_
 
 __axisRepoPath__=/axis2-1.6.1/client_repo/axis2.xml
 
-_log4j property file path. If doesn't exist it uses a default configuration of INFO level writing to the stdout_
+
+_#log4j property file path. If doesn't exist it uses a default configuration of INFO level writing to the stdout_
 
 __log4jConfig__=/log4j.properties
 
-_use the totangoActiveLists property to specify active-lists to sync into Eloqua. Provide the list # ID and separate by commas if more than one_
+
+_#use the totangoActiveLists property to specify active-lists to sync into Eloqua. Provide the list # ID and separate by commas if more than one_
 
 __totangoActiveLists__=45,2030, 4001
 
-_Unique param for Authorization. see at (http://www.totango.com/developer/data-api/reference/data-api-authentication/)_
+
+_#Unique param for Authorization. see at (http://www.totango.com/developer/data-api/reference/data-api-authentication/)_
 
 __totangoToken__=70c80ab8bf99fa92d0bdb140866064c2cc268b40john@totango.com
 
-_Eloqua params_
+
+_#Eloqua params_
 
 __eloquaUser__=John.Smith
 
@@ -128,18 +132,20 @@ __eloquaPassword__=Example2424
 
 __eloquaAccountId__=E10AccountExample
 
-_The Eloqua internal name for the ‘Totango insights’ custom field_
+
+_#The Eloqua internal name for the ‘Totango insights’ custom field_
 
 __totangoInsightsField__=C_Totango_insights1
 
 
-_totango-eloqua binding_
+_#totango-eloqua binding_
 
-_The account identity, by default account_id, can replaced with name_
+_#The account identity, by default account_id, can replaced with name_
 
 __totangoAccoutId__=account_id
 
-_Eloqua contact field that represents the account id. The connector finds contacts to update according to this field_
+
+_#Eloqua contact field that represents the account id. The connector finds contacts to update according to this field_
 
 __accountIdField__=C_Company
  
