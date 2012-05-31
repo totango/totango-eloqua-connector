@@ -18,10 +18,7 @@ dog's back.
 > This is the second paragraph in the blockquote.
 >
 > ## This is an H2 in a blockquote
-*are emphasized*.
 **strong emphasis**
-[example link](http://example.com/).
-![alt text](/path/to/img.jpg "Title")
  
 
 Totango-Eloqua Connector
@@ -30,7 +27,7 @@ Totango-Eloqua is an open source connector that allows you to sync Totango engag
 
 These are called Lifecycle Marketing Campaigns and you can read more about them on the Totango website. Example of such campaigns can target users that have been inactive for a long time, those that have (or have not) used a certain feature of your application, power users and so forth. 
 
-**NOTE:** The Totango-Eloqua Connector uses the following APIs:
+__NOTE__: The Totango-Eloqua Connector uses the following APIs:
 
 1. [Totango REST API](http://www.totango.com/developer/data-api/reference/active_list-api-endpoint/)
 
@@ -53,12 +50,12 @@ How it works -- Creating a new campaign
 Follow these steps to create a Lifecycle marketing campaign. The default settings of the eloqua-connector assumes a basic “We Miss You Campaign” targeted at inactive users. Read through this document to configure for your specific campaign needs. 
 
 
-*Step-1*: Define an Active-List to capture the behavior you want on Totango. 
+__Step-1__: Define an Active-List to capture the behavior you want on Totango. 
 (By default, the connector uses the “Inactive Accounts”  to flag all users in accounts that have not used your application for the last two weeks). See [Filters & Segments](http://support.totango.com/entries/20447806-filters-segments) for more information. 
 
 Once you have your Active-List selected, take note of its name and ID (see: http://www.totango.com/developer/data-api/reference/active_list-api/ to find your Active-Lists ID)
 
-*Step-2*: Configure the connector with the Active-List ID
+__Step-2__: Configure the connector with the Active-List ID
 Configure your Active-List ID in the connector configuration file under config.properties (look under the connector’s installation directory, under the config folder).  Use the totangoActiveLists property to specify active-lists to sync into Eloqua. Provide the list ID and separate by commas if more than one.
 
 For example, if the Active-list on Totango has an ID of 1004, add 1004 to the totangoAclistLists property:
