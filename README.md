@@ -50,7 +50,8 @@ This will update the Totango Insight field in Eloqua’s lead database. Users from
 
 NOTE: If you are running an ongoing campaign, you will need to schedule this command to run periodically using cron or your scheduler of choice. You should run the connector 60min before the campaign’s scheduled execution, just to ensure the sync. process has safely completed. 
 
-### java com.totango.eloqua.TotangoEloquaConnector
+__java com.totango.eloqua.TotangoEloquaConnector__
+
 run the connector main class com.totango.eloqua.TotangoEloquaConnector
 
 __Output example__:
