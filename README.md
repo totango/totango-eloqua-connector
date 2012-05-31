@@ -56,15 +56,15 @@ __Step-1__: Define an Active-List to capture the behavior you want on Totango.
 Once you have your Active-List selected, take note of its name and ID (see: http://www.totango.com/developer/data-api/reference/active_list-api/ to find your Active-Lists ID)
 
 __Step-2__: Configure the connector with the Active-List ID
-Configure your Active-List ID in the connector configuration file under config.properties (look under the connector’s installation directory, under the config folder).  Use the totangoActiveLists property to specify active-lists to sync into Eloqua. Provide the list ID and separate by commas if more than one.
+Configure your Active-List ID in the connector configuration file under config.properties (look under the connector’s installation directory, under the config folder).  Use the __totangoActiveLists__ property to specify active-lists to sync into Eloqua. Provide the list ID and separate by commas if more than one.
 
-For example, if the Active-list on Totango has an ID of 1004, add 1004 to the totangoAclistLists property:
+>For example, if the Active-list on Totango has an ID of 1004, add 1004 to the totangoAclistLists property:
 
-totangoActiveLists=1004
+__totangoActiveLists=1004__
 
 
 
-Step3: Run the connector
+__Step3__: Run the connector
 
 Use the command below.
 
@@ -72,19 +72,19 @@ This will update the Totango Insight field in Eloqua’s lead database. Users from
 
 NOTE: If you are running an ongoing campaign, you will need to schedule this command to run periodically using cron or your scheduler of choice. You should run the connector 60min before the campaign’s scheduled execution, just to ensure the sync. process has safely completed. 
 
-java com.totango.eloqua.TotangoEloquaConnector
+> ## java com.totango.eloqua.TotangoEloquaConnector
 run the connector main class com.totango.eloqua.TotangoEloquaConnector
 
-Output example:
-Totango-Eloqua connector is running...
-Connected to Eloqua
-Reset the insigts field for all Eloqua contacts. This can take a few minutes
-Connected to Totango
-Updating based on 4 Active-List.This can take a few minutes
-Finished successfully. Updated 7,842 contacts in Eloqua, based on 4 Active-Lists in Totango
+__Output example__:
+> Totango-Eloqua connector is running...
+> Connected to Eloqua
+> Reset the insigts field for all Eloqua contacts. This can take a few minutes
+> Connected to Totango
+> Updating based on 4 Active-List.This can take a few minutes
+> Finished successfully. Updated 7,842 contacts in Eloqua, based on 4 Active-Lists in Totango
 
 
-Step-3: Create or run the Campaign in Eloqua. 
+__Step-3__: Create or run the Campaign in Eloqua. 
 Add to your Eloqua campaign a decision that checks for the ‘active list name’ value inside the “Totango insights” field. In case of true add asset of suitable mail. Repeat this actions for all active lists.
 
 <SCREENSHOT>
