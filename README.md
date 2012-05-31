@@ -182,7 +182,7 @@ To use the Totango-Eloqua application you should install Java environment as fol
 
 3. Copy all jar files from your rampart-1.6.1\lib dir to your Totango-Eloqua\lib dir. Make sure all jar files are in your java classpath.
 
-4. Use the apache user guide in http://axis.apache.org/axis2/java/core/docs/userguide.html to create an EloquaStub. Make sure you use the namespace Eloqua and the wsdl from __(https://secure.eloqua.com/API/1.2/Service.svc?wsdl)__.
+4. Use the apache user guide in http://axis.apache.org/axis2/java/core/docs/userguide.html to create an EloquaStub. Make sure you use the namespace Eloqua and the wsdl from __https://secure.eloqua.com/API/1.2/Service.svc?wsdl__.
 
 5. Change the EloquaStub.getPolicy method to:
 
