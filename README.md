@@ -36,6 +36,7 @@ These are called Lifecycle Marketing Campaigns and you can read more about them 
 
 
 Prerequisites
+-------------
 Before starting with the Totango-Eloqua connector, you will need:
 
 1. A Totango service up & running. Totango is already collecting engagement data from your web-application. 
