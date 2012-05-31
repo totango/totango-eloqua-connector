@@ -1,26 +1,3 @@
-A First Level Header
-====================
-
-A Second Level Header
----------------------
-
-Now is the time for all good men to come to
-the aid of their country. This is just a
-regular paragraph.
-
-The quick brown fox jumped over the lazy
-dog's back.
-
-### Header 3
-
-> This is a blockquote.
-> 
-> This is the second paragraph in the blockquote.
->
-> ## This is an H2 in a blockquote
-**strong emphasis** 
- 
-
 Totango-Eloqua Connector
 ========================
 Totango-Eloqua is an open source connector that allows you to sync Totango engagement data into Eloqua so you can target marketing campaigns to specific types of user. 
@@ -125,34 +102,34 @@ If you didn’t install and setup the environment for the connector yet, follow th
 
 Change the configuration file __config/config.properties__ under your __totango-eloqua-connector__ dir as following:
 
-# Axis path
+> Axis path
 __axisRepoPath__=/axis2-1.6.1/client_repo/axis2.xml
 
-# log4j property file path. If doesn't exist it uses a default configuration of INFO level writing to the stdout
+> log4j property file path. If doesn't exist it uses a default configuration of INFO level writing to the stdout
 __log4jConfig__=/log4j.properties
 
-# use the totangoActiveLists property to specify active-lists to sync into Eloqua. Provide the list # ID and separate by commas if more than one
+> use the totangoActiveLists property to specify active-lists to sync into Eloqua. Provide the list # ID and separate by commas if more than one
 __totangoActiveLists__=45,2030, 4001
 
-# Unique param for Authorization. see at (http://www.totango.com/developer/data-api/reference/data-api-authentication/)
+> Unique param for Authorization. see at (http://www.totango.com/developer/data-api/reference/data-api-authentication/)
 __totangoToken__=70c80ab8bf99fa92d0bdb140866064c2cc268b40john@totango.com
 
-# Eloqua params
+> Eloqua params
 __eloquaUser__=John.Smith
 
 __eloquaPassword__=Example2424
 
 __eloquaAccountId__=E10AccountExample
 
-# The Eloqua internal name for the ‘Totango insights’ custom field
+> The Eloqua internal name for the ‘Totango insights’ custom field
 __totangoInsightsField__=C_Totango_insights1
 
 
-# totango-eloqua binding
-# The account identity, by default account_id, can replaced with name
+> totango-eloqua binding
+> The account identity, by default account_id, can replaced with name
 __totangoAccoutId__=account_id
 
-# Eloqua contact field that represents the account id. The connector finds contacts to update according to this field
+> Eloqua contact field that represents the account id. The connector finds contacts to update according to this field
 __accountIdField__=C_Company
 
 
