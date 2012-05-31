@@ -58,7 +58,7 @@ Once you have your Active-List selected, take note of its name and ID (see: http
 __Step-2__: Configure the connector with the Active-List ID
 Configure your Active-List ID in the connector configuration file under config.properties (look under the connector’s installation directory, under the config folder).  Use the __totangoActiveLists__ property to specify active-lists to sync into Eloqua. Provide the list ID and separate by commas if more than one.
 
->For example, if the Active-list on Totango has an ID of 1004, add 1004 to the totangoAclistLists property:
+_For example, if the Active-list on Totango has an ID of 1004, add 1004 to the totangoAclistLists property:_
 
 __totangoActiveLists=1004__
 
@@ -72,15 +72,20 @@ This will update the Totango Insight field in Eloqua’s lead database. Users from
 
 NOTE: If you are running an ongoing campaign, you will need to schedule this command to run periodically using cron or your scheduler of choice. You should run the connector 60min before the campaign’s scheduled execution, just to ensure the sync. process has safely completed. 
 
-> ## java com.totango.eloqua.TotangoEloquaConnector
+### java com.totango.eloqua.TotangoEloquaConnector
 run the connector main class com.totango.eloqua.TotangoEloquaConnector
 
 __Output example__:
 > Totango-Eloqua connector is running...
+
 > Connected to Eloqua
+
 > Reset the insigts field for all Eloqua contacts. This can take a few minutes
+
 > Connected to Totango
+
 > Updating based on 4 Active-List.This can take a few minutes
+
 > Finished successfully. Updated 7,842 contacts in Eloqua, based on 4 Active-Lists in Totango
 
 
@@ -95,9 +100,14 @@ You’re done!
 
 
 Detailed Setup Instructions
+---------------------------
+
 See below for details on the one-time setup you need to do on Eloqua-Totango-Connector, and on your Eloqua instance in order to support the soultion
 
+
 Setting up Eloqua Totango Insights field  (One time setup)
+----------------------------------------------------------
+
 Declare a custom field for contacts called “Totango insights". 
 
 Go to Setup -> Fields & Views and select “Add” (see here http://topliners.eloqua.com/thread/3742). Take note of the field’s Internal name, you will need it to complete the setup as explained in the next section. 
