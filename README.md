@@ -71,7 +71,9 @@ __Output example__:
 __Step-4__: Create or run the Campaign in Eloqua. 
 Add to your Eloqua campaign a decision that checks for the ‘active list name’ value inside the “Totango insights” field. In case of true add asset of suitable mail. Repeat this actions for all active lists.
 
-![](/totango/totango-eloqua-connector/blob/master/images/Eloqua_campaign.png 200)
+![](/totango/totango-eloqua-connector/blob/master/images/Eloqua_campaign.png)
+
+<img src="/totango/totango-eloqua-connector/blob/master/images/Eloqua_campaign.png" width="300" height="200" />
 
 Of course, once you have the campaign setup for the first time, you can just re-execute it. 
 
