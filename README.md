@@ -186,24 +186,24 @@ To use the Totango-Eloqua application you should install Java environment as fol
 
 5. Change the EloquaStub.getPolicy method to:
 
-private static org.apache.neethi.Policy getPolicy (java.lang.String policyString) {
+>private static org.apache.neethi.Policy getPolicy (java.lang.String policyString) {
 
-  java.io.ByteArrayInputStream bais = new java.io.ByteArrayInputStream(policyString.getBytes());
+>  java.io.ByteArrayInputStream bais = new java.io.ByteArrayInputStream(policyString.getBytes());
   
-  try{
+>  try{
   
-    StAXOMBuilder builder = new StAXOMBuilder(bais);
+>    StAXOMBuilder builder = new StAXOMBuilder(bais);
 	
-    OMElement documentElement = builder.getDocumentElement();
+>    OMElement documentElement = builder.getDocumentElement();
 	
-    return org.apache.neethi.PolicyEngine.getPolicy(documentElement);
+>    return org.apache.neethi.PolicyEngine.getPolicy(documentElement);
 	
-  }catch (XMLStreamException e){
+>  }catch (XMLStreamException e){
   
-    e.printStackTrace();
+>    e.printStackTrace();
 	
-  }
+>  }
   
-  return null;
+>  return null;
   
-}
+>}
