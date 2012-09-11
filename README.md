@@ -20,7 +20,7 @@ Before starting with the Totango-Eloqua connector, you will need:
 2. An Eloqua service up & running. Eloqua lead database populated with your application users and the Totango Insights field added to Eloqua. Read the section “
 Setting up Eloqua Totango Insights field” to complete this step. 
 
-3. The totango-eloqua-connector package (this GIT project) downloaded and ready on a machine with a JVM  installed. Read the section “Setting up the totango-eloqua-connector” below to complete this step. 
+3. The totango-eloqua-connector jar file (this GIT project) downloaded and ready on a machine with a JVM and Axis2 installed. Read the section “Setting up the totango-eloqua-connector” below to complete this step. 
 
 
 How it works -- Creating a new campaign
@@ -50,16 +50,15 @@ This will update the Totango Insight field in Eloqua’s lead database. Users from
 
 NOTE: If you are running an ongoing campaign, you will need to schedule this command to run periodically using cron or your scheduler of choice. You should run the connector 60min before the campaign’s scheduled execution, just to ensure the sync. process has safely completed. 
 
-__java com.totango.eloqua.TotangoEloquaConnector__
+__java -jar totango-eloqua-connector.jar config.properties__
 
-run the connector main class com.totango.eloqua.TotangoEloquaConnector
 
 __Output example__:
 > Totango-Eloqua connector is running...
 
 > Connected to Eloqua
 
-> Reset the insigts field for all Eloqua contacts. This can take a few minutes
+> Reset the insigts field for all Eloqua contacts. It might take a few minutes
 
 > Connected to Totango
 
@@ -96,22 +95,42 @@ Once you complete this step, each contact in the Eloqua contacts database will h
 
 For example, if you created 3 Active-Lists on Totango: inactive (for inactive accounts), uses-reporting (for accounts that have used the Reporting module recently), Power (for “powerusers”), the Totango Insights field will contain the value “inactive” or “uses-reporting, powerusers” and so forth.  
 
+ 
+
+Installing the connector on your machine
+----------------------------------------
+
+### Java installation 
+To use the Totango-Eloqua application you should install Java environment as following:
+
+1. Download and install Java JRE from http://www.oracle.com/technetwork/java/javase/downloads/index.html. 
+
+2. put your JRE home dir in your system path (On Mac it might be set automatically during the installation).
+
+
+### Axis2
+1. Download the axis2-1.6.1.zip from Git and extract it to your file system.
+
+
+### Config.properties
+1. Download the config.properties file to your file system
+
+
 
 Setting up the totango-eloquoa-connector
 ----------------------------------------
 If you didn’t install and setup the environment for the connector yet, follow the instructions under “Installing the connector on your machine”
 
-Change the configuration file __config/config.properties__ under your __totango-eloqua-connector__ dir as following:
+Change the configuration file __config.properties__ under your __totango-eloqua-connector__ dir as following:
 
-_#Axis path_
+_#Axis path - must point to the axis2-1.6.1/repository in your file system_
 
-__axisRepoPath__=/axis2-1.6.1/client_repo/axis2.xml
+__axisRepoPath__=/Users/popo/Documents/axis2-1.6.1/repository
 
 
 _#log4j property file path. If doesn't exist it uses a default configuration of INFO level writing to the stdout_
 
-__log4jConfig__=/log4j.properties
-
+__log4jConfig__=
 
 _#use the totangoActiveLists property to specify active-lists to sync into Eloqua. Provide the list # ID and separate by commas if more than one_
 
@@ -147,43 +166,32 @@ __totangoAccoutId__=account_id
 _#Eloqua contact field that represents the account id. The connector finds contacts to update according to this field_
 
 __accountIdField__=C_Company
- 
 
-Installing the connector on your machine
-----------------------------------------
 
-### Java installation 
-To use the Totango-Eloqua application you should install Java environment as following:
 
-1. Download and install Java JRE from http://www.oracle.com/technetwork/java/javase/downloads/index.html. 
-
-2. put your JRE home dir in your system path.
-
+Comments for programmer
+-----------------------
 
 ### HTTP Client
-1. Download the apache http client from http://hc.apache.org/downloads.cgi.
-
-2. Extract the zip/tar file and copy all jar files from the httpcomponents-client-4.1.3\lib dir to the Totango-Eloqua\lib dir. Make sure all jar files are in your java classpath.
+1. Apache http client was downloaded from http://hc.apache.org/downloads.cgi.
 
 
 ### Log4J
-1. Download Log4j from http://logging.apache.org/log4j/1.2/download.html.
+1. Log4 was downloaded from http://logging.apache.org/log4j/1.2/download.html.
 
-2. Extract the zip/tar file and copy jar to the Totango-Eloqua\lib dir. Make sure the jar file is in your java classpath.
-
-3. Update the log4jConfig property with your log4j configuration file. If not will use default configuration.
+2. Update the log4jConfig property with your log4j configuration file. If not will use default configuration.
 
 
 ### Axis2
-1. Download the apache axis2 tool from http://axis.apache.org/axis2/java/core/download.cgi , extract it to your file system.
+1. Apache axis2 was downloaded from http://axis.apache.org/axis2/java/core/download.cgi.
 
-2. Since Eloqua’s api is secured you need to download the rampart module from http://axis.apache.org/axis2/java/rampart/download.html , extract it to your file system install it and copy the rampart.mar file to your axis2 modules dir. Make sure you have set the __AXIS2_HOME__ environment variable.
+2. Rampart module was downloaded from http://axis.apache.org/axis2/java/rampart/download.html
 
-3. Copy all jar files from your rampart-1.6.1\lib dir to your Totango-Eloqua\lib dir. Make sure all jar files are in your java classpath.
+3. rampart.mar file was moved to axis2 tool under axis2-1.6.1/repository/mosules.
 
-4. Use the apache user guide in http://axis.apache.org/axis2/java/core/docs/userguide.html to create an EloquaStub. Make sure you use the namespace Eloqua and the wsdl from __https://secure.eloqua.com/API/1.2/Service.svc?wsdl__.
+4. Axis stub was created by Eloqua wsdl file in __https://secure.eloqua.com/API/1.2/Service.svc?wsdl__ using the namespace __Eloqua__.
 
-5. Change the EloquaStub.getPolicy method to:
+5. EloquaStub.getPolicy method was overrides as following (a known bug):
 
 >private static org.apache.neethi.Policy getPolicy (java.lang.String policyString) {
 
