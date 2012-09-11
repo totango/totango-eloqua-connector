@@ -169,8 +169,8 @@ __accountIdField__=C_Company
 
 
 
-Comments for programmer
------------------------
+Comments for programmers
+------------------------
 
 ### HTTP Client
 1. Apache http client was downloaded from http://hc.apache.org/downloads.cgi.
